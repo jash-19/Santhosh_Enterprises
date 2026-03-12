@@ -153,9 +153,15 @@ gap:15px;
 
 .gallery img{
 width:100%;
+height:220px;
+object-fit:cover;
 border-radius:10px;
+transition:0.3s;
 }
 
+.gallery img:hover{
+transform:scale(1.05);
+}
 /* ABOUT */
 
 .about{
@@ -205,23 +211,47 @@ font-size:28px;
 box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* MOBILE OPTIMIZATION */
+.menu-toggle{
+display:none;
+font-size:24px;
+cursor:pointer;
+color:white;
+}
+
+/* MOBILE MENU */
 
 @media(max-width:768px){
 
 nav{
-flex-direction:column;
-text-align:center;
+flex-direction:row;
+justify-content:space-between;
+}
+
+.menu-toggle{
+display:block;
 }
 
 nav ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#0f172a;
 flex-direction:column;
-margin-top:10px;
+align-items:center;
+display:none;
 }
 
 nav ul li{
-margin:8px 0;
+margin:15px 0;
 }
+
+nav ul.active{
+display:flex;
+}
+
+}
+
 
 .hero{
 min-height:auto;
@@ -262,12 +292,18 @@ grid-template-columns:1fr;
 
 <h2>Santosh Enterprises</h2>
 
-<ul>
+<div class="menu-toggle" id="menu-toggle">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+<ul id="menu">
+
 <li><a href="#home">Home</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#gallery">Gallery</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
+
 </ul>
 
 </nav>
@@ -325,10 +361,11 @@ grid-template-columns:1fr;
 
 <div class="gallery">
 
-<img src="your-image1.jpg">
-<img src="your-image2.jpg">
-<img src="your-image3.jpg">
-<img src="your-image4.jpg">
+<img src="gallery_928254917732354833560.jpg">
+<img src="gallery_928254917732355183627.jpg">
+<img src="gallery_928254917732355185564.jpg">
+<img src="gallery_928254917732354837326.jpg">
+<img src="gallery_928254917732354820224.jpg">
 
 </div>
 
@@ -376,5 +413,17 @@ We provide durable aluminium fabrication and high quality fabric solutions.
 <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+<script>
+
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+
+toggle.addEventListener("click", () => {
+menu.classList.toggle("active");
+});
+
+</script>  
+
 </body>
 </html>
+
