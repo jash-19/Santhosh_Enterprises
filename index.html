@@ -46,7 +46,9 @@ flex-wrap:wrap;
 }
 
 nav h2{
-font-size:20px;
+font-size:22px;
+font-weight:700;
+animation:fadeUp 1.2s ease;
 }
 
 nav ul{
@@ -65,11 +67,24 @@ text-decoration:none;
 font-size:15px;
 }
 
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 /* HERO */
 
 .hero{
 min-height:70vh;
-background:linear-gradient(#0f766e,#14b8a6);
+background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url("https://images.unsplash.com/photo-1505692794403-34d4982e1d8a");
+background-size:cover;
+background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -83,14 +98,15 @@ font-size:42px;
 margin-bottom:10px;
 color:#f8fafc;
 font-weight:600;
+animation:fadeUp 1.4s ease;
 }
 
 .hero p{
 font-size:20px;
 margin-bottom:20px;
 color:#e5e7eb;
+animation:fadeUp 1.7s ease;
 }
-
 .btn{
 background:white;
 color:#0f766e;
@@ -426,5 +442,6 @@ menu.classList.toggle("active");
 
 </body>
 </html>
+
 
 
